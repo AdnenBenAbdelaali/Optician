@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html>
 <title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 
 <style>
-
-.loadStupid {
-				background-color:blue;
-				}
-                
-
-
-#progress25{height:24px;
-			width:25%; 
-			background-color:black;
-  			}
-#progress50{
-height:24px;
-width:50%;
-background-color:black;
-		}
-#progress100{
-height:24px;
-width:100%;
-background-color:black;
-}
-
+.buttonProgressBar{border-radius:10px;
+			background-color: green;}
+.greyProgressBar{background-color:yellow;
+                  margin-left:20%;
+                  margin-right:20%;}
+.greenProgressBar{color:white;background-color:purple}
 
 </style>
 <body>
 
-<h2>Progress Bar Width</h2>
-<p>Change the width of the progress bar with the width property:</p>
+<div class="w3-container">
+  <h2>Loading ...</h2>
 
-<div class="loadStupid">
-  <div   id="progress25"></div>
-</div><br>
+  <div class="greyProgressBar">
+    <div id="myBar" class="buttonProgressBar" style="height:24px;width:0px"><p id="ourText">Text</p></div>
+  </div>
+  <br>
 
-<div class="loadStupid">
-  <div  id="progress50"></div>
-</div><br>
-
-<div class="loadStupid">
-  <div id="progress100"></div>
+  <button class="buttonProgressBar" onclick="move()">Click Me</button> 
 </div>
 
+<script>
+  var myBar = document.getElementById("myBar");
+  myBar.hidden = true; 
+function move() {
+  myBar.hidden = false;
+  var elem = document.getElementById("myBar");  
+  var ourText = document.getElementById("ourText");
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+    	ourText.innerHTML="100%";
+      clearInterval(id);
+      
+      setTimeout(function() {
+        myBar.hidden = true;
+      }, 5*1000);
+    } else {
+      width +=0.3; 
+      elem.style.width = width + '%'; 
+      var takeIt = Math.round(width);
+      ourText.innerHTML=" " + takeIt + '%';
+      
+    }
+   
+    elem.style.color = "white";
+   
+    ourText.style.marginLeft="45%";
+  }
+}
+</script>
+
 </body>
-</html>
-
-<!-- New html file : load smart hihihihihi -->
-
- 
+</html> 
