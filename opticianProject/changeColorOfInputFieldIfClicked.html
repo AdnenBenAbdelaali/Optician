@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>input reaction to events</title>
+		<style>
+		#firstInputTest {
+			background-color: white;
+		}	
+
+		</style>
+	</head>
+	<body>
+		<input id="firstInputTest"placeholder="" type="text">
+	</body>
+	<script>
+		var firstInputTest = document.getElementById('firstInputTest');
+
+
+firstInputTest.addEventListener('click',function() {
+
+ firstInputTest.style.backgroundColor="red";
+},true);
+
+firstInputTest.onmouseout = function() {
+	firstInputTest.style.backgroundColor="green";
+}
+
+	</script>
+</html>
+
