@@ -28,7 +28,7 @@ body {
 
 
 </head>
-<body>
+<body id="dd">
 <div id="container">
   <ul>
   <li><a id="create" href="#NewClient">New client</a></li>
@@ -124,6 +124,31 @@ body {
     </div>
 
   </div>
+
+<script>
+	var changeTheBack = document.getElementById("dd");
+	var count = 0;
+	 function changeBackColor(){
+		
+
+		var backgroundColors = ['#f9e6ff', '#f2ccff', '#ecb3ff', '#e699ff', '#df80ff'];
+		changeTheBack.style.backgroundColor = backgroundColors[count];
+			count ++;
+			if(count >= backgroundColors.length - 1 ) {
+				count = 0;
+			}
+		}
+
+  
+
+  
+  
+		setInterval(changeBackColor,5000);
+
+ 
+
+</script>
+
 
 <script type="text/javascript" src="main.js"></script>
 
