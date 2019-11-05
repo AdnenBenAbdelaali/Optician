@@ -1,87 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
+<title> Optician database app</title>
+ <link rel= "stylesheet"  type="text/css" href="style.css">   
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
 <style>
-ul {
-  list-style-type: none;
-  margin-left: 10px;
-  margin-right: 400px;
-  margin-top:10px;
-  padding: 0px;
-  overflow: hidden;
-  background-color: gold;
-}
+  #patientSheet{
+    margin-left:20px;
+    margin-right:20px;
+  }
+  #details {
+    margin-left:20px;
+    margin-right:20px;
+  }
 
-li {
-  float: left;
-}
-
-li a{
-  display: inline-block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover{
-  background-color: blue;
-}
-
-#inputFieldSearch{
-  padding-left: 150px;
-  padding-right:0px;
-  padding-top:13px;
-  padding-bottom:10px;
-  
-}
-#searchButtonList {
-  padding-left: 5px;
-  padding-right:5px;
-  padding-top:13px;
-  padding-bottom:10px;
-  
-}
-/*
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+body {
+  background-color:#f0f5f5;
 }
 
 
-.dropdown-content a:hover {background-color: #f1f1f1;}
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-*/
 </style>
+
+
 </head>
 <body>
-<div id="ourNavBar">
+<div id="container">
   <ul>
-  <li><a href="#NewClient">New client</a></li>
-  <li><a href="#updateClient">update client</a></li>
-  <li><a href="#deleteClient">delete client</a>
-  <li id="inputFieldSearch"><input placeholder="Search" type="text" size="50"></li>
-  <li id="searchButtonList"><button id="searchButton">search</button></li>
+  <li><a id="create" href="#NewClient">New client</a></li>
+  <li><a id="update" href="#updateClient"> client list</a></li>
+  <li><a id="delete" href="#deleteClient">delete client</a>
+  <li id="searchBar"><input id="searchInput" placeholder="last name or phone number" type="text" size="50"></li>
+  <li id="searchButtonList"><button id="searchBtn">search</button></li>
   <!--
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
@@ -93,11 +47,88 @@ li.dropdown {
   </li>
 -->
 </ul>
+</div></br>
+
+<div id ="patientSheet">
+      <div id="readings">
+
+        <label>Right</label>
+        <table id="rightTbale">
+          <tr>
+            <th>SPH </th>
+            <th>CYL </th>
+            <th>AX </th>
+            <th>PD </th>
+            <th>Addation</th>
+          </tr>
+          <tr>
+            <td><input id ="R-SPH"></td>
+            <td><input id ="R-CYL"></td>
+            <td><input id ="R-AX"></td>
+            <td><input id ="R-PD"></td>
+            <td><input id ="R-Addition"></td>
+
+          </tr>
+
+        </table> </div><br>
 
 
+        <label>Left</label>
+        <table id="leftTbale">
+          <tr>
+            <th>SPH </th>
+            <th>CYL </th>
+            <th>AX </th>
+            <th>PD </th>
+            <th>Addation</th>
 
-</div>
+          </tr>
+          <tr> 
+            <td><input id ="L-SPH"></td>
+            <td><input id ="L-CYL"></td>
+            <td><input id ="L-AX"></td>
+            <td><input id ="L-PD"></td>
+            <td><input id ="L-Addition"></td>
 
+          </tr>
+        </table><br>
+        <label>Rx date</label>
+        <input type="date" id="RxDate" style="margin-left:44px" size="80">
+        <hr>
+      </div>
+      <div id="details" >
+        <div id="firstName">
+          <label>firstname</label>
+           <input id="firstNameInput" type="text"  style="margin-left:32px">
+        </div>
+        <div id="lastName">
+          <label>lastname</label>
+           <input id="lastNameInput" type="text" style="margin-left:35px">
+        </div>
+        <div id="dateOfBirth">
+          <label>date of birth</label>
+           <input id="dateOfBirthInput" type="text" placeholder="dd/mm/yyyy" style="margin-left:14px">
+        </div>
+        <div id="phoneNumber">
+          <label>phone number</label>
+          <input id="phoneNumberInput" type="tel">
+        </div>
+        <div id="email">
+          <label>email</label>
+          <input id="emailInput" type="text" style="margin-left:56px">
+        </div>
+      </div>
+    </br>
+     <button style="border-radius:10px;
+      background-color: yellow; margin-left:20px;"> <a id ="save"  href="#save"><div>Save</div></a></button>
+    </div>
+
+  </div>
+
+<script type="text/javascript" src="main.js"></script>
 
 </body>
+<!--
+<footer><p id="copyright">made by : xxx ,xxx && xxx</p></footer>
+-->
 </html>
