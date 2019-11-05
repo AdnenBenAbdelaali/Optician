@@ -5,7 +5,7 @@
 ul {
   list-style-type: none;
   margin-left: 10px;
-  margin-right: 350px;
+  margin-right: 400px;
   margin-top:10px;
   padding: 0px;
   overflow: hidden;
@@ -26,6 +26,21 @@ li a{
 
 li a:hover{
   background-color: blue;
+}
+
+#inputFieldSearch{
+  padding-left: 150px;
+  padding-right:0px;
+  padding-top:13px;
+  padding-bottom:10px;
+  
+}
+#searchButtonList {
+  padding-left: 5px;
+  padding-right:5px;
+  padding-top:13px;
+  padding-bottom:10px;
+  
 }
 /*
 li.dropdown {
@@ -60,11 +75,13 @@ li.dropdown {
 </style>
 </head>
 <body>
-
-<ul>
+<div id="ourNavBar">
+  <ul>
   <li><a href="#NewClient">New client</a></li>
   <li><a href="#updateClient">update client</a></li>
   <li><a href="#deleteClient">delete client</a>
+  <li id="inputFieldSearch"><input placeholder="Search" type="text" size="50"></li>
+  <li id="searchButtonList"><button id="searchButton">search</button></li>
   <!--
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
@@ -77,6 +94,9 @@ li.dropdown {
 -->
 </ul>
 
+
+
+</div>
 
 
 </body>
