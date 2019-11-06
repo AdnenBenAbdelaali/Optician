@@ -18,39 +18,94 @@
     margin-right:20px;
   }
 
+
+
+
+
+
+
 body {
   background-color:#f0f5f5;
 }
 
 
 
+.buttonProgressBar{border-radius:10px;
+			background-color: green;}
+.ProgressBar{background-color:none;
+                  margin-left:10%;
+                  margin-right:20%;
+                  display:center;
+                    }
+.greenProgressBar{color:white;
+	background-color:purple;
+                 
+                  }
+  
+
+
+
+
+
+
+
 </style>
+
+</head>
+<body>
+
+
+
+
+<!--
+
+<div class="flex-container">
+  <div id="firstDiv">1</div>
+  <div id="secondDiv">2</div>
+  <div id="thirdDiv">3</div>  
+</div>
+
+
+<div class="flex-container">
+  <div id="firstDiv">1</div>
+  <div id="secondDiv">2</div>
+  
+</div>
+
+
+
+-->
+
+
 
 
 </head>
 <body id="dd">
-<div id="container">
-  <ul>
-  <li><a id="create" href="#NewClient">New client</a></li>
-  <li><a id="update" href="#updateClient"> client list</a></li>
-  <li><a id="delete" href="#deleteClient">delete client</a>
-  <li id="searchBar"><input id="searchInput" placeholder="last name or phone number" type="text" size="50"></li>
-  <li id="searchButtonList"><button id="searchBtn">search</button></li>
-  <!--
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </li>
--->
-</ul>
-</div></br>
+		
+	<!--	<div class="flex-container">                 -->
+ 		 <div id="firstDiv">
+ 		 	<div id="container" >
+  			<ul>
+  			<li><a id="create" href="#NewClient">New client</a></li>
+  			<li><a id="update" href="#updateClient"> client list</a></li>
+  			<li><a id="delete" href="#deleteClient">delete client</a>
+  			<li id="searchBar"><input id="searchInput" placeholder="last name or phone number" type="text" size="50"></li>
+  			<li id="searchButtonList"><button id="searchBtn">search</button></li>
+  			<!--
+  			<li class="dropdown">
+    			<a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+    			<div class="dropdown-content">
+      			<a href="#">Link 1</a>
+      			<a href="#">Link 2</a>
+      			<a href="#">Link 3</a>
+    		</div>
+  			</li>
+			-->
+			</ul>
+			</div></br>
 
-<div id ="patientSheet">
-      <div id="readings">
+<div id ="patientSheet" >
+	<div id="readings" >
 
         <label>Right</label>
         <table id="rightTbale">
@@ -96,24 +151,26 @@ body {
         <input type="date" id="RxDate" style="margin-left:44px" size="80">
         <hr>
       </div>
+
+     
       <div id="details" >
-        <div id="firstName">
+        <div id="firstName" >
           <label>firstname</label>
            <input id="firstNameInput" type="text"  style="margin-left:32px">
         </div>
-        <div id="lastName">
+        <div id="lastName" >
           <label>lastname</label>
            <input id="lastNameInput" type="text" style="margin-left:35px">
         </div>
-        <div id="dateOfBirth">
+        <div id="dateOfBirth" >
           <label>date of birth</label>
            <input id="dateOfBirthInput" type="text" placeholder="dd/mm/yyyy" style="margin-left:14px">
         </div>
-        <div id="phoneNumber">
+        <div id="phoneNumber" >
           <label>phone number</label>
           <input id="phoneNumberInput" type="tel">
         </div>
-        <div id="email">
+        <div id="email" >
           <label>email</label>
           <input id="emailInput" type="text" style="margin-left:56px">
         </div>
@@ -123,8 +180,67 @@ body {
       background-color: yellow; margin-left:20px;"> <a id ="save"  href="#save"><div>Save</div></a></button>
     </div>
 
-  </div>
 
+
+  </div>
+  		
+  <div class="ProgressBar">
+    <div id="myBar" class="buttonProgressBar" style="height:24px;width:0px"><p id="ourText">Text</p></div>
+  </div>
+  <br>
+
+  <button class="buttonProgressBar" onclick="move()">Click Me</button> 
+</div>
+
+
+<script>
+  var myBar = document.getElementById("myBar");
+  myBar.hidden = true; 
+function move() {
+  myBar.hidden = false;
+  var elem = document.getElementById("myBar");  
+  var ourText = document.getElementById("ourText");
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 50) {
+    	ourText.innerHTML="100%";
+      clearInterval(id);
+      
+      setTimeout(function() {
+        myBar.hidden = true;
+      }, 5*1000);
+    } else {
+      width +=0.3; 
+      elem.style.width = width + '%'; 
+      var takeIt = Math.round(width);
+      ourText.innerHTML=" " + takeIt + '%';
+      
+    }
+   
+    elem.style.color = "white";
+   
+    ourText.style.marginLeft="45%";
+  }
+}
+
+</script>
+
+
+
+
+
+ 		 
+  
+		
+ 	<!--	 </div> -->
+ 		 
+ 		 	
+
+ 		 		
+
+
+		
 <script>
 	var changeTheBack = document.getElementById("dd");
 	var count = 0;
@@ -151,6 +267,8 @@ body {
 
 
 <script type="text/javascript" src="main.js"></script>
+
+	
 
 </body>
 <!--

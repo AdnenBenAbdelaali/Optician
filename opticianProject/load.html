@@ -6,18 +6,24 @@
 <style>
 .buttonProgressBar{border-radius:10px;
 			background-color: green;}
-.greyProgressBar{background-color:yellow;
-                  margin-left:20%;
-                  margin-right:20%;}
-.greenProgressBar{color:white;background-color:purple}
-
+.ProgressBar{background-color:none;
+                  margin-left:10%;
+                  margin-right:20%;
+                  display:center;
+                    transform: rotate(270deg);}
+.greenProgressBar{color:white;background-color:purple;
+                  transform: rotate(270deg);
+                  
+                  
+                  }
+  
 </style>
 <body>
 
-<div class="w3-container">
+<div class="OurContainer">
   <h2>Loading ...</h2>
 
-  <div class="greyProgressBar">
+  <div class="ProgressBar">
     <div id="myBar" class="buttonProgressBar" style="height:24px;width:0px"><p id="ourText">Text</p></div>
   </div>
   <br>
@@ -35,7 +41,7 @@ function move() {
   var width = 1;
   var id = setInterval(frame, 10);
   function frame() {
-    if (width >= 100) {
+    if (width >= 50) {
     	ourText.innerHTML="100%";
       clearInterval(id);
       
